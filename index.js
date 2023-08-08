@@ -5,7 +5,7 @@ const neeEntries = () => {
   
   let userEntries = neeEntries();
   
-  const printEntries = () => {
+  const keepEntries = () => {
     const entries = neeEntries();
   
     const tableEntries = entries
@@ -47,11 +47,11 @@ const neeEntries = () => {
   
     userEntries.push(entry);
     localStorage.setItem("user-Entries", JSON.stringify(userEntries));
-    printEntries();
+    keepEntries();
     userForm.reset();
   };
   
   let userForm = document.getElementById("form");
   userForm.addEventListener("submit", uploadForm);
   
-  printEntries();
+  keepEntries();
