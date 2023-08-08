@@ -1,12 +1,12 @@
-const reviveEntries = () => {
+const neeEntries = () => {
     let entries = localStorage.getItem("user-Entries");
     return entries ? JSON.parse(entries) : [];
   };
   
-  let userEntries = reviveEntries();
+  let userEntries = neeEntries();
   
   const printEntries = () => {
-    const entries = reviveEntries();
+    const entries = neeEntries();
   
     const tableEntries = entries
         .map(
@@ -14,7 +14,7 @@ const reviveEntries = () => {
                 <td style = "padding: 2px 4px">${entry.name}</td>
                 <td style = "padding: 2px 4px">${entry.email}</td>
                 <td style = "padding: 2px 4px">${entry.password}</td>
-                <td style = "padding: 2px 4px">${entry.mobileno}</td>
+                <td style = "padding: 2px 4px">${entry.dob}</td>
                 <td style = "padding: 2px 4px">${entry.acceptedTermsAndConditions}</td>
             </tr>`
         )
@@ -34,14 +34,14 @@ const reviveEntries = () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    const mobileno = document.getElementById("mobileno").value;
+    const dob = document.getElementById("dob").value;
     const acceptedTermsAndConditions = document.getElementById("Accepted term").checked;
   
     const entry = {
         name,
         email,
         password,
-        mobileno,
+        dob,
         acceptedTermsAndConditions,
     };
   
